@@ -23,7 +23,7 @@
       <div class="w-75 brdr"></div>
     </div>
 
-    <div class="col-md-2" *ngFor="let Tv of trendingTv">
+    <div class="col-md-2" *ngFor="let Tv of trendingTv" [routerLink]="['/tvdetails',Tv.id]">
       <div class="position-relative">
         <img [src]="prefixImg+Tv.poster_path" class="w-100 " alt="">
         <h5 class="mt-2 mb-4">{{Tv.name}}</h5>
@@ -41,7 +41,7 @@
       <div class="w-75 brdr"></div>
     </div>
 
-    <div class="col-md-2" *ngFor="let People of trendingPeople">
+    <div class="col-md-2" *ngFor="let People of trendingPeople" [routerLink]="['/peopledetails',People.id]">
       <div class="position-relative">
         <img [src]="prefixImg+People.profile_path" class="w-100" alt="">
         <h5 class="mt-2 mb-4">{{People.name}}</h5>
