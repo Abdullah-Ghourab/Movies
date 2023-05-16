@@ -1,0 +1,15 @@
+li {
+  cursor: pointer;
+}
+.activeroute {
+  color: #536ad0 !important;
+}
+img {
+   transition: .6s;
+
+}
+img:hover {
+ transform: translateX(8px);
+
+
+}

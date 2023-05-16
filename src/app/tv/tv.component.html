@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center mt-4">
+  <button class="btn btn-danger mx-2" (click)="paginateTv(-1)">
+    < </button>
+      <button class="btn btn-danger" (click)="paginateTv(1)"> > </button>
+</div>
+<div class="row my-5">
+  <div class="col-md-2" *ngFor="let Tv of trendingTv" [routerLink]="['/tvdetails',Tv.id]">
+    <div class="position-relative thing">
+      <img [src]="prefixImg+Tv.poster_path" class="w-100 " alt="">
+      <h5 class="mt-2 mb-4">{{Tv.name}}</h5>
+      <div class="position-absolute top-0 end-0 p-2 bg-info">
+        {{Tv.vote_average}}
+      </div>
+    </div>
+
+  </div>
+</div>

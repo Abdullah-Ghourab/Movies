@@ -1,0 +1,50 @@
+<div class="contianer-fluid my-5">
+  <div class="row">
+    <div class="col-md-4 py-5">
+      <div class="w-25 brdr"></div>
+      <h2 class="my-5">Trending Movies To Watch Right Now</h2>
+      <div class="w-75 brdr"></div>
+    </div>
+
+    <div class="col-md-2" *ngFor="let movie of trendingMovie" [routerLink]="['/moviedetails',movie.id]">
+      <div class="position-relative movie">
+        <img [src]="prefixImg+movie.poster_path" class="w-100" alt="">
+        <h5 class="mt-2 mb-4">{{movie.title}}</h5>
+        <div class="position-absolute top-0 end-0 p-2 bg-info">
+          {{movie.vote_average}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col-md-4 py-5">
+      <div class="w-25 brdr"></div>
+      <h2 class="my-5">Trending Series To Watch Right Now</h2>
+      <div class="w-75 brdr"></div>
+    </div>
+
+    <div class="col-md-2" *ngFor="let Tv of trendingTv">
+      <div class="position-relative">
+        <img [src]="prefixImg+Tv.poster_path" class="w-100 " alt="">
+        <h5 class="mt-2 mb-4">{{Tv.name}}</h5>
+        <div class="position-absolute top-0 end-0 p-2 bg-info">
+          {{Tv.vote_average}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 py-5">
+      <div class="w-25 brdr"></div>
+      <h2 class="my-5">Popualr Stars Right Now</h2>
+      <div class="w-75 brdr"></div>
+    </div>
+
+    <div class="col-md-2" *ngFor="let People of trendingPeople">
+      <div class="position-relative">
+        <img [src]="prefixImg+People.profile_path" class="w-100" alt="">
+        <h5 class="mt-2 mb-4">{{People.name}}</h5>
+      </div>
+    </div>
+  </div>

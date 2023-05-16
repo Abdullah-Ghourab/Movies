@@ -1,0 +1,64 @@
+<div class="mx-auto my-5 w-75">
+
+  <div class="alert-danger alert" *ngIf="errors.length>0">
+    {{errors}}
+  </div>
+  <form [formGroup]="RegisterForm" (ngSubmit)="RegisterSubmit(RegisterForm)">
+    <div class="my-2">
+      <label for="firstName">First Name</label>
+      <input type="text" formControlName="first_name" class="form-control" id="firstName">
+
+      <div class="alert alert-danger my-2"
+        *ngIf="RegisterForm.get('first_name')?.errors!=null &&RegisterForm.get('first_name')?.touched">
+        <p *ngIf="RegisterForm.get('first_name')?.errors?.['required']">first_name required</p>
+        <p *ngIf="RegisterForm.get('first_name')?.errors?.['minlength']">first_name min length 3</p>
+        <p *ngIf="RegisterForm.get('first_name')?.errors?.['maxlength']">first_name max length 10</p>
+      </div>
+    </div>
+    <div class="my-2">
+      <label for="lastName">Last Name</label>
+      <input type="text" formControlName="last_name" class="form-control" id="lastName">
+      <div class="alert alert-danger my-2"
+        *ngIf="RegisterForm.get('last_name')?.errors!=null &&RegisterForm.get('last_name')?.touched">
+        <p *ngIf="RegisterForm.get('last_name')?.errors?.['required']">last_name required</p>
+        <p *ngIf="RegisterForm.get('last_name')?.errors?.['minlength']">last_name min length 3</p>
+        <p *ngIf="RegisterForm.get('last_name')?.errors?.['maxlength']">last_name max length 10</p>
+      </div>
+    </div>
+    <div class="my-2">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" class="form-control" id="email">
+      <div class="alert alert-danger my-2"
+        *ngIf="RegisterForm.get('email')?.errors!=null &&RegisterForm.get('email')?.touched">
+        <p *ngIf="RegisterForm.get('email')?.errors?.['required']">email required</p>
+        <p *ngIf="RegisterForm.get('email')?.errors?.['email']">email should be valid</p>
+      </div>
+    </div>
+    <div class="my-2">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" class="form-control" id="password">
+      <div class="alert alert-danger my-2"
+        *ngIf="RegisterForm.get('password')?.errors!=null &&RegisterForm.get('password')?.touched">
+        <p *ngIf="RegisterForm.get('password')?.errors?.['required']">password required</p>
+        <p *ngIf="RegisterForm.get('password')?.errors?.['pattern']">password must contain uppercase ... </p>
+      </div>
+    </div>
+    <div class="my-2">
+      <label for="age">Age</label>
+      <input type="number" formControlName="age" class="form-control" id="age">
+
+      <div class="alert alert-danger my-2"
+        *ngIf="RegisterForm.get('age')?.errors!=null &&RegisterForm.get('age')?.touched">
+        <p *ngIf="RegisterForm.get('age')?.errors?.['required']">age required</p>
+        <p *ngIf="RegisterForm.get('age')?.errors?.['min']">age must be 12 min</p>
+        <p *ngIf="RegisterForm.get('age')?.errors?.['max']">age must be 60 max </p>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="RegisterForm.invalid" class="btn btn-primary"
+      (click)="RegisterSubmit">Register</button>
+  </form>
+
+
+
+</div>

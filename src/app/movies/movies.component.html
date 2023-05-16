@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center mt-4">
+  <button class="btn btn-danger mx-2" (click)="paginateMovies(-1)">
+    < </button>
+      <button class="btn btn-danger" (click)="paginateMovies(1)"> > </button>
+</div>
+<div class="row mt-5">
+  <div class="col-md-3  " *ngFor="let movie of trendingMovie" [routerLink]="['/moviedetails',movie.id]">
+    <div class="position-relative thing">
+      <img [src]="prefixImg+movie.poster_path" class="w-100" alt="">
+      <h5 class="mt-2 mb-4">{{movie.title}}</h5>
+      <div class="position-absolute top-0 end-0 p-2 bg-info">
+        {{movie.vote_average}}
+      </div>
+    </div>
+  </div>
+</div>

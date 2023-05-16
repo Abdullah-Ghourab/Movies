@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row" *ngIf="tvDetails">
+    <div class="col-md-3">
+      <img [src]="prefixImg+tvDetails.poster_path" class="w-100" alt="">
+    </div>
+    <div class="col-md-7">
+      <h3> Title : {{tvDetails.name}}</h3>
+      <p>Date : {{tvDetails.first_air_date}}</p>
+
+
+      <div class="d-flex">
+        <p class="mx-2" *ngFor="let genre of tvDetails.genres">{{genre.name}}</p>
+      </div>
+      <p style="color: dimgrey;">{{tvDetails.overview}}</p>
+    </div>
+  </div>
+</div>
