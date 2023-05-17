@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container mt-4">
   <div class="row" *ngIf="peopleDetails">
     <div class="col-md-3">
       <img [src]="prefixImg+peopleDetails.profile_path" class="w-100" alt="">
     </div>
-    <div class="col-md-7">
+    <div class="col-md-7 titlez">
       <h3>{{peopleDetails.name}}</h3>
       <p>birthday : {{peopleDetails.birthday}}</p>
-      <p>Country : {{peopleDetails.place_of_birth}}</p>
+      <p>birth place : {{peopleDetails.place_of_birth}}</p>
       <p style="color: dimgrey;">{{peopleDetails.biography}}</p>
 
 

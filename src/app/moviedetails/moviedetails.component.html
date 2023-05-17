@@ -1,15 +1,15 @@
-<div class="container">
+<div class="container mt-4">
   <div class="row" *ngIf="movieDetails">
     <div class="col-md-3">
-      <img [src]="prefixImg+movieDetails.poster_path" class="w-100" alt="">
+      <img [src]="prefixImg+movieDetails.poster_path" class="w-100 imgz" alt="">
     </div>
-    <div class="col-md-7">
+    <div class="col-md-7  titlez">
       <h3>{{movieDetails.title}}</h3>
 
       <p>Release Date : {{movieDetails.release_date}}</p>
-      <div class="d-flex">
+      <div class="d-flex genre">
         Genres :
-        <p class="mx-2" *ngFor="let genre of movieDetails.genres"> {{genre.name}}</p>
+        <p class="mx-2 btn btn-warning" *ngFor="let genre of movieDetails.genres"> {{genre.name}}</p>
       </div>
       <p style="color: dimgrey;">{{movieDetails.overview}}</p>
     </div>
