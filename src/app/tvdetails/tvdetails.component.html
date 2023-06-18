@@ -8,9 +8,9 @@
       <p>Date : {{tvDetails.first_air_date}}</p>
 
 
-      <div class="d-flex genre">
+      <div class="d-flex genre overflow-auto">
         <span>Genres:</span>
-        <p class="mx-2 btn btn-warning overflow-auto" *ngFor="let genre of tvDetails.genres">{{genre.name}}</p>
+        <p class="mx-2 btn btn-warning " *ngFor="let genre of tvDetails.genres">{{genre.name}}</p>
       </div>
       <p style="color: dimgrey;">{{tvDetails.overview}}</p>
     </div>
