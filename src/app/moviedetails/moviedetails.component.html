@@ -7,8 +7,8 @@
       <h3>{{movieDetails.title}}</h3>
 
       <p>Release Date : {{movieDetails.release_date}}</p>
-      <div class="d-flex genre">
-        Genres :
+      <div class="d-flex genre overflow-auto">
+        <span>Genres:</span>
         <p class="mx-2 btn btn-warning" *ngFor="let genre of movieDetails.genres"> {{genre.name}}</p>
       </div>
       <p style="color: dimgrey;">{{movieDetails.overview}}</p>
